@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+</head>
+<body class="bg-gray-100">
+<nav class="bg-gray-800 text-white fixed w-full z-10 top-4 left-4 right-4 shadow-lg mx-auto container shadow-md">
+    <div class="flex justify-between items-center px-6 py-3">
+        <div class="flex items-center">
+            <img src="/static/images/pan.png" alt="Logo" class="h-8 w-8">
+            <div class="ml-4 flex space-x-4">
+                <button hx-get="/contact" hx-target="#content" class="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</button>
+                <button hx-get="/multi-cluster" hx-target="#content" class="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">T1</button>
+                <button hx-get="/settings" hx-target="#content" class="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">T2</button>
+                <button hx-get="/security" hx-target="#content" class="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">T3</button>
+                <button hx-get="/tools" hx-target="#content" class="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">T4</button>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <button class="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">帮助</button>
+            <img src="path/to/user-icon.png" alt="User Icon" class="h-8 w-8 ml-4">
+        </div>
+    </div>
+</nav>
+
+<div class="mt-20 px-4 py-4">
+    <!-- Content display area -->
+    <div id="content" class="container mx-auto px-2 py-4 ">
+        <h2 class="text-xl font-semibold mb-4">应用列表</h2>
+        <hr>
+        <p class="text-gray-600">主页</p>
+    </div>
+</div>
+</body>
+</html>
