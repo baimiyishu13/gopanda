@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导出k8s集群Pod信息</title>
+    <!-- 引入HTMX库 -->
+    <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+</head>
+<body>
+<div>
+    <h1>导出k8s集群Pod信息</h1> <!-- 页面标题 -->
+    <p>请上传kubeconfig文件以生成CSV文件</p> <!-- 提示文字 -->
+    <!-- 上传表单 -->
+    <form id="uploadForm" hx-post="/api/upload" hx-encoding="multipart/form-data" hx-trigger="submit" hx-target="#result">
+        <input type="file" name="kubeconfig" required> <!-- 文件输入框 -->
+        <button type="submit">上传并执行</button> <!-- 提交按钮 -->
+    </form>
+    <div id="result"></div> <!-- 结果显示区域 -->
+</div>
+</body>
+</html>

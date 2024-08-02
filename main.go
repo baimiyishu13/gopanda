@@ -1,9 +1,10 @@
 package main
 
 import (
+	handler "github.com/baimiyishu13/gopanda/cmd/k8s-pod-info-exporter"
 	"github.com/baimiyishu13/gopanda/handlers"
-	"github.com/baimiyishu13/gopanda/logger"
 	"github.com/baimiyishu13/gopanda/middleware"
+	"github.com/baimiyishu13/gopanda/middleware/logger"
 	"github.com/go-chi/chi/v5"
 	"net/http"
 )
@@ -16,6 +17,11 @@ func main() {
 	r.Get("/", handlers.HomeHandler)
 	r.Get("/contact", handlers.ContactHandler)
 	r.Get("/login", handlers.LoginHandler)
+
+	// k8s-pod-info-exporter
+	r.Get("/k8s-pod-info-exporter", handlers.K8sPodInfoExporter)
+	r.Post("/api/upload", handler.UploadHandler)               // 文件上传的路由
+	r.Get("/api/download/{filename}", handler.DownloadHandler) // 文件下载的路由
 	r.NotFound(handlers.NotFoundHandler)
 
 	log.Info("starting server on :3000")

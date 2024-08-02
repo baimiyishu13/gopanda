@@ -6,14 +6,19 @@ import (
 	"net/http"
 )
 
-func LoginHandler(w http.ResponseWriter, r *http.Request) {
+func K8sPodInfoExporter(w http.ResponseWriter, r *http.Request) {
 	log := logger.GetLogger()
+	info := struct {
+		Name string
+	}{
+		Name: "Gopanda",
+	}
 	w.Header().Set("Content-Type", "text/html")
-	t, err := template.ParseFiles("./templates/login.gohtml")
+	t, err := template.ParseFiles("./templates/k8s-pod-info-exporter.gohtml")
 	if err != nil {
 		log.Errorf("failed to parse template: %v", err)
 	}
-	err = t.Execute(w, nil)
+	err = t.Execute(w, info)
 	if err != nil {
 		log.Errorf("failed to execute template: %v", err)
 	}

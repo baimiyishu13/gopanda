@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"github.com/baimiyishu13/gopanda/logger"
+	"github.com/baimiyishu13/gopanda/middleware/logger"
 	"html/template"
 	"net/http"
 )
