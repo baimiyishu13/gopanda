@@ -1,15 +1,15 @@
 package handlers
 
 import (
-	"github.com/baimiyishu13/gopanda/middleware/logger"
+	"github.com/baimiyishu13/gopanda/internal/middleware/logger"
 	"html/template"
 	"net/http"
 )
 
-func LoginHandler(w http.ResponseWriter, r *http.Request) {
+func TestHandler(w http.ResponseWriter, r *http.Request) {
 	log := logger.GetLogger()
 	w.Header().Set("Content-Type", "text/html")
-	t, err := template.ParseFiles("./templates/login.gohtml")
+	t, err := template.ParseFiles("./internal/templates/test/test.gohtml")
 	if err != nil {
 		log.Errorf("failed to parse template: %v", err)
 	}

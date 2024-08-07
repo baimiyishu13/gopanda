@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/baimiyishu13/gopanda/middleware/logger"
+	"github.com/baimiyishu13/gopanda/internal/middleware/logger"
 	"github.com/go-chi/chi/v5"
 	"html/template"
 	"net/http"
